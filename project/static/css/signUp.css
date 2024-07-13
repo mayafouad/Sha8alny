@@ -1,0 +1,89 @@
+.required-input input{
+    border: 2px rgb(155, 13, 13) solid;
+    background-color: rgb(248, 169, 169);
+}
+
+.required-input label{
+    color: rgb(155, 13, 13);
+}
+#b{
+    color:rgb(0, 139, 21);
+    margin-top: 4%;
+    /*margin-left: 20%;*/
+    padding-bottom: 4%;
+    /*text-align: center;*/
+    border: rgb(255, 255, 255) solid;
+    border-radius: 10px;
+    /*margin-right: 20%;*/
+    background-color: rgb(255, 255, 255);
+    /*text-align: center;*/
+    padding-left: 220px;
+    padding-right: 15%;
+}
+#sign{
+    float: right;
+    margin-left: 50px;
+    width: 5 px;
+    height: 1 px;
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+#com{
+    display:none;
+}
+.de{
+    color: rgb(3, 55, 20);
+    background-color: rgb(183, 228, 168);
+    border-radius: 10px;
+    border-color:rgb(183, 228, 168);
+    border-style: solid;
+}
+#b1{
+    color: rgb(255, 255, 255);
+    background-color: green;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: green;
+    size: 15px;
+}
+#b1:hover{
+    border-color: darkgreen;
+    background-color: darkgreen;
+    color: rgb(188, 251, 181);
+}
+.divs{
+    padding-left: 12px;
+}
+#butt{
+    margin-left: 1%;
+}
+h2{
+    margin-left: 1%;
+}
+#link:visited{
+    color:darkblue
+}
+#link:link{
+    color:darkorange
+}
+#link:hover{
+    color: cornflowerblue;
+}
+#link:active{
+    color: blueviolet;
+}
+#b2{
+    color: rgb(255, 255, 255);
+    background-color: blue;
+    border-radius: 10px;
+    border-style: solid;
+    size: 15px;
+}
+#b2:hover{
+    background-color: darkblue;
+    color: cornflowerblue;
+}
+.diii{
+    margin-left: 1.5%;
+}

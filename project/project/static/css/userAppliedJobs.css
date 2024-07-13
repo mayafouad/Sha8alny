@@ -1,0 +1,91 @@
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style for the applied job section */
+.appliedjob {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin:0px 50px 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.appliedjob hr {
+    border-color: #ddd;
+    margin: 20px 0;
+}
+
+/* Style for list items */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li{
+    margin-bottom: 15px;
+}
+
+/* Style for spans inside list items */
+li span {
+    font-weight: bold;
+}
+
+/* Additional styling for the whole document */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#fff;
+}
+
+/* Styling for horizontal lines */
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Style for heading */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Style for job details */
+.job-details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    color: #28a745;
+}
+
+span {
+    color:#716d6d;
+}
+
+.job-title {
+    color: rgb(69, 192, 69);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+hr {
+    font-weight: bold;
+    height: 1px;
+    background-color: rgb(69, 192, 69);
+    border: none;
+    margin: 20px 0;
+}

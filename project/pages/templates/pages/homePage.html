@@ -1,0 +1,163 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'css/homePage.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "stylesheet" href = "{%static 'css/navBar.css'%}">
+    <link rel="stylesheet" href="{%static 'css/jobDetails.css' %}">
+
+    <title>User Home Page</title>
+    <script src="{%static 'js/jobDetails.js' %}"></script>
+    <script src="{%static 'js/reviewForm.js' %}"></script>
+    <script src = "{%static 'js/dynamicNavBar.js' %}">  </script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            {% if request.session.current_user == "user" %}
+        <div class = "nav-bar">
+            <div class = "nav-left-section">
+                <p>   <span>S</span>ha8alny </p>
+            </div>
+            <div class = "nav-right-section">
+            <ul>
+                <li> <a href ="{%url 'homePage'%}"> Home</a> </li>
+                <li> <a href ="{%url 'homePage'%}"> search</a>  </li>
+                <li> <a href ="{%url 'jobDetails'%}">Jobs</a>  </li>
+                <li> <a href ="{%url 'company'%}"> Companies</a>  </li>
+                <li> <a href ="{%url 'userCurrentlyAppliedJobs' %}">Applied Jobs</a>  </li>
+                <li> <a href ="{%url 'userProfileLast'%}">profile</a>  </li>
+                <li> <a href ="{%url 'logout'%}" id = "userLogOut"> <i class="fa fa-sign-out"></i> </a>  
+            </li>  
+        </ul>
+        </div>
+        </div>
+            
+        {% elif request.session.current_user == "admin" %}
+        <div class = "nav-bar">
+            <div class = "nav-left-section">
+                <p>  <span>S</span>ha8alny </p>
+            </div>
+            <div class = "nav-right-section">
+            <ul>
+                <li> <a href ="{%url 'homePage'%}"> Home</a> </li>
+                <li> <a href ="{%url 'homePage'%}"> search</a>  </li>
+                <li> <a href ="{%url 'jobDetails'%}">Jobs</a></li>
+                <li> <a href ="{%url 'adminProfile' %}">My Profile</a></li>
+            <li> <a href = "{% url 'logout'%}" id = "adminLogOut"> <i class="fa fa-sign-out"></i> </a> </li>
+            </ul>
+            </div>
+            </div>
+        {% else %}
+        <div class = "nav-bar">
+            <div class = "nav-left-section">
+                <p>  <span>S</span>ha8alny </p>
+            </div>
+            <div class = "nav-right-section">
+                <ul>
+                <li><a href="{%url 'MainHomePage'%}">Home</a></li>
+                <li><a href="{%url 'signUp'%}">sign up</a></li>
+                <li><a href="{%url 'login'%}">log in</a></li>
+                <li><a href="{%url 'aboutUs'%}">AboutUs</a></li>
+                <li><a href="{%url 'jobDetails'%}">Available jobs</a></li>
+                </ul>
+            </div>
+    </div>
+    
+        {% endif %}
+        </nav>
+    </header>
+    <main>
+        <div>
+            <div class = "top-part">
+                <form action="{% url 'jobDetails' %}" method="GET">
+                    <div class="search-container">
+                        <div class="search">
+                            <input type="text" name="q" id="search" placeholder="Search" class="form-control form-control-lg" />
+                        </div>
+                        <div class="btn-search">
+                            <button type="submit" id="searchtitle" class="btn btn-dark btn-lg">
+                                <i class="fa fa-search search-icon">
+                                </i>
+                            </button>
+            
+                        </div>
+                    </div>
+                </form>
+        
+            </div>
+    
+        </div>
+        <br><br>
+    
+        <div class="wrapper">
+
+            <div class = "opnion-msg">
+                <p>
+                    At <span> Sha8alny </span>, your opinion matters to us. We are dedicated to continuously <br>
+                improving our platform to better serve your job search and recruitment needs. Your feedback <br>
+                helps us understand what we are doing right and where we can make enhancements. Please take <br>
+                a moment to share your thoughts, experiences, and suggestions. Your insights are invaluable <br>
+                in helping us create a more efficient, user-friendly, and effective job portal for everyone. <br>
+                Thank you for contributing to our community!
+                </p>
+                
+
+            </div>
+
+            <div class = "opinion-form"> 
+                <h3>Submit your feedback</h3>
+                <form id="feedbackForm">
+                    <div class="rating">
+                        <input type="number" name="rating" id="rating" hidden>
+                        <i class='fas fa-star' data-value="1"></i>
+                        <i class='fas fa-star' data-value="2"></i>
+                        <i class='fas fa-star' data-value="3"></i>
+                        <i class='fas fa-star' data-value="4"></i>
+                        <i class='fas fa-star' data-value="5"></i>
+                    </div>
+                    <textarea name="Opinion" id="Opinion" cols="30" rows="10" placeholder="Your Opinion ..."></textarea>
+                    <div class="btn group">
+                        <button type="submit" class="btn submit">Submit</button>
+                        <button class="btn cancel">Cancel</button>
+                    </div>
+                </form>
+
+            </div>
+           
+        </div>
+        <br> <br>
+    </main> 
+    <footer class="footer">
+        <div class="container">
+            <div class="container-inner">
+                <br>
+                <p>Contact Us</p>
+                <div class="row">
+                    <div class="footer-col">
+                        <div class="footer-content">
+                            <img src="{%static 'image/email-logo.png'%}" width="35px">
+                            <p> Email : Sha8alny@gmail.com </p>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-content">
+                            <img src="{%static 'image/call-logo.png'%}" width="35px">
+                            <p> Hotline : 19171</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2024 Sha8alny web site . All rights reserved</p> <br>
+        </div>
+    </footer>
+</body>
+</html>

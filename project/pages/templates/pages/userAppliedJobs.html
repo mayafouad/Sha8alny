@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Applied Jobs </title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel = "stylesheet" href = "{% static  'css/userAppliedJobs.css' %}">
+    <link rel = "stylesheet" href = "{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+    <nav>
+        <nav>
+        {% if request.session.current_user == "user" %}
+        <div class = "nav-bar">
+            <div class = "nav-left-section">
+                <p>   <span>S</span>ha8alny </p>
+            </div>
+            <div class = "nav-right-section">
+            <ul>
+                <li> <a href ="{%url 'homePage'%}"> Home</a> </li>
+                <li> <a href ="{%url 'homePage'%}"> search</a>  </li>
+                <li> <a href ="{%url 'jobDetails'%}">Jobs</a>  </li>
+                <li> <a href ="{%url 'company'%}"> Companies</a>  </li>
+                <li> <a href ="{%url 'userCurrentlyAppliedJobs'%}">Applied Jobs</a>  </li>
+                <li> <a href ="{%url 'userProfileLast'%}">profile</a>  </li>
+                <li> <a href ="{%url 'MainHomePage'%}" id = "userLogOut">
+                    <i class="fa fa-sign-out" style = "color:black">  </i> </a>  
+            </li>  
+        </ul>
+        </div>
+        </div>
+        {% endif %}
+        </nav>
+
+    </nav>
+
+    <div id="applied-jobs-div">
+        {% for job in job_details %}
+        <div class="appliedjob">
+            <div>
+                <span class = "job-title">{{job.job_company}} </span>
+            </div>
+            <hr>
+            <div>
+                <ul>
+                    <li><span>Job Title: </span>{{job.job_title}}</li>
+                    <li><span>Category: </span>{{job.job_category}}</li>
+                    
+                    <li><span>Salary: </span>{{job.job_salary}}</li>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <script src = "{% static 'js/userAppliedJobs.js'%}">
+        
+    </script>
+    
+</body>
+</html>

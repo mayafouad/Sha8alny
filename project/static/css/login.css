@@ -1,0 +1,118 @@
+h1{
+    color: darkgreen;
+    font-size: 50px;
+    margin-left: 5%;
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+#div1{
+    padding-top: 5%;
+    color: darkgreen;
+    margin-top: 10%;
+    margin-left: 9%;
+    padding-bottom: 10%;
+    border: rgb(255, 255, 255) solid;
+    border-radius: 10px;
+    margin-right: 60%;
+    background-color: rgb(255, 255, 255);
+}
+#imglog{
+    float: right;
+    margin-right: 300px;
+}
+h2{
+    font-size: 30px;
+    margin-left: 26%;
+}
+#b1{
+    color: rgb(255, 255, 255);
+    background-color: green;
+    border-radius: 10px;
+    margin-left: 1%;
+    border-style: solid;
+    border-color: green;
+    size: 15px;
+}
+#b2{
+    color: rgb(255, 255, 255);
+    background-color: green;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: green;
+    size: 15px;
+}
+
+#link:visited{
+    color:darkblue
+}
+#link:link{
+    color:darkorange
+}
+#link:hover{
+    color: cornflowerblue;
+}
+#link:active{
+    color: blueviolet;
+}
+#b1:hover{
+    border-color: darkgreen;
+    background-color: darkgreen;
+    color: rgb(188, 251, 181);
+}
+#b2:hover{
+    border-color: darkgreen;
+    background-color: darkgreen;
+    color: rgb(188, 251, 181);
+}
+p{
+    color: darkgreen;
+}
+.te{
+    color: rgb(4, 55, 3);
+    background-color: rgb(146, 227, 169);
+    border-radius: 10px;
+    border-style: solid;
+}
+#check{
+    background-color: red;
+    margin-left: 23%;
+}
+#use{
+    border:none;
+    outline:none;
+}
+#userico{
+    color: rgb(3, 17, 55);
+    background-color: rgb(146, 227, 169);
+    border-color: rgb(146, 227, 169);
+    border-radius: 15px;
+    border-style: solid;
+    margin-left: 10%;
+    margin-right: 40%;
+}
+#pass{
+    border:none;
+    outline:none;
+}
+#passico{
+    color: rgb(3, 17, 55);
+    background-color: rgb(146, 227, 169);
+    border-color: rgb(146, 227, 169);
+    border-radius: 15px;
+    border-style: solid;
+    margin-left: 10%;
+    margin-right: 40%;
+}
+#lock{
+    padding-left: 20%;
+}
+#userlog{
+    padding-left: 20%;
+}
+#psign{
+    margin-left: 10%;
+}
+#buttonsleft{
+    margin-left: 14%;
+}

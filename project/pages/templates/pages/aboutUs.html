@@ -1,0 +1,225 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AboutUs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% load static %}
+    <link rel = "stylesheet" href = "{%static 'CSS/testmonial.css'%}">
+
+    <script src = "{% static 'js/dynamicNavBar.js' %}">
+    </script>
+    {% load static %}
+    <link rel = "stylesheet" href = "{%static 'CSS/navBar.css'%}">
+    <link rel="stylesheet" href="{%static 'CSS/aboutUs.css'%}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <nav>
+                <div class = "nav-bar">
+                    <div class = "nav-left-section">
+                        <p>  <span>S</span>ha8alny </p>
+                    </div>
+                    <div class = "nav-right-section">
+                        <ul>
+                        <li><a href="{%url 'MainHomePage'%}">Home</a></li>
+                        <li><a href="{%url 'signUp'%}">sign up</a></li>
+                        <li><a href="{%url 'login'%}">log in</a></li>
+                        <li><a href="{%url 'aboutUs'%}">AboutUs</a></li>
+                        <li><a href="{%url 'jobDetails'%}">Available jobs</a></li>
+                        </ul>
+                    </div>
+                 </div>
+            
+              
+                </nav>
+    
+            </nav>
+    
+        </nav>
+    </header>
+    <main>
+        <div class="mission-div">
+            <div class="mission-paragraph">
+                <h1> Our  Mission </h1>
+                <p> At <span> Sha8alny</span>, our mission is to bridge the gap between job seekers and employers <br>
+                by providing a seamless, user-friendly platform. We empower individuals to find <br>
+                their dream careers and help companies discover top talent. Our goal is to create a <br>
+                dynamic ecosystem where opportunities are accessible, and career growth is fostered <br>
+                through innovative tools and resources. We are committed to ensuring that every user, <br>
+                whether searching for a job or hiring,  experiences a supportive, efficient, and rewarding journey.
+                </p>
+
+            </div>
+            <div class="mission-img">
+                <img src="{% static 'image/sha8alny-mission.jpeg' %}" alt="Image 1" > 
+            </div>
+
+        </div>
+        
+        <div class="story-div">
+            
+            <div class="mission-img">
+                <img src="{% static 'image/sha8alny-story.jpeg' %}" alt="Image 1" > 
+            </div>
+            <div class="mission-paragraph">
+                <h1 id = "story-title"> Our Story </h1>
+                <p>
+                    <span> Sha8alny</span> was born out of a passion for simplifying the job search and hiring process. Our founders, <br>
+                     who experienced firsthand the challenges of navigating the job market, envisioned a solution <br>
+                     to make this crucial life step easier for everyone. What started as a small project has grown  <br>
+                     into a robust platform, serving thousands of users across various industries. From our humble beginnings, <br>
+                      we have evolved, incorporating the latest technology and user feedback to enhance our services. <br>
+                      Today, Sha8alny stands as a testament to our dedication to innovation, inclusivity, <br>
+                      and excellence in the job portal industry. Our story is one of perseverance, growth, <br>
+                       and a relentless pursuit of making meaningful connections in the world of work. <br>
+                </p>
+
+            </div>
+
+        </div>
+    </main>
+   
+
+          
+    
+    <div class="testimonials">
+        <h2>Testimonials</h2>
+        <h3>What our clients say about us</h3>
+        <div class="containeries">
+            <div class="boxes">
+                <img src="{% static 'image/m1.png' %}" width="50px">
+                <h4>Ahmed Mohamed</h4>
+                <span class="title">Web Developer</span>
+                <div class="rate">
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                </div>
+            <p>My experience with this job platform has been nothing short of fantastic
+                . The process of finding and applying for jobs was straightforward, and
+                 the communication from the platform was excellent. I'm thrilled to say 
+                 that I've secured a position that aligns perfectly with my skills and 
+                 interests.</p>    
+            </div>
+            <div class="boxes">
+                <img src="{% static 'image/w3.png' %}" width="50px">
+                <h4>Mona Ashraf</h4>
+                <span class="title">Financial Consultant</span>
+                <div class="rate">
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                </div>
+            <p>Wow! I was pleasantly surprised by the wide range of 
+                job opportunities available on this platform. irrespective 
+                of your field or whereabouts, you're bound to find something 
+                that suits your needs. Thanks to this platform, I was able to explore 
+                different career paths</p>    
+            </div>
+            <div class="boxes">
+                <img src="{% static 'image/m2.png' %}" width="50px">
+                <h4>Amr Nabil</h4>
+                <span class="title">Sales Manager</span>
+                <div class="rate">
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            <p>This job page is a true gem. The ease of navigation and the quality 
+                of job listings make it stand out from the rest. Within days of signing up,
+                 I had multiple interviews lined up, and I eventually landed a job that's 
+                 a perfect fit for me</p>    
+            </div>
+            <div class="boxes">
+                <img src=".{% static 'image/w1.png' %}" width="50px">
+                <h4>Yara Ibrahim</h4>
+                <span class="title">Doctor</span>
+                <div class="rate">
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            <p>If you're serious about finding a job, look no further 
+                than this job website. The extensive list of job listings caters to professionals of all levels, and the intuitive interface makes the job search process seamless. 
+                Thanks to this platform, I'm now settled into my new job.</p>    
+            </div>
+            <div class="boxes">
+                <img src="{% static 'image/m3.png' %}" width="50px">
+                <h4>Shady Farag</h4>
+                <span class="title">HR</span>
+                <div class="rate">
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                    <i class=" complete fa-solid fa-star"></i>
+                </div>
+            <p>I was skeptical at first, but the results speak for themselves
+                - they're truly amazing! Thanks to this job website, I secured a position that not only aligns perfectly with my skills but also
+               offers incredible growth opportunities. I never imagined I could find such a perfect fit so quickly</p>    
+            </div>
+            <div class="boxes">
+                <img src="{% static 'image/w2.png' %}" width="50px">
+                <h4>Dina Gamal</h4>
+                <span class="title">Teacher</span>
+                <div class="rate">
+                    <i class="complete fa-solid fa-star"></i>
+                    <i class="complete fa-solid fa-star"></i>
+                    <i class="complete fa-solid fa-star"></i>
+                    <i class="complete fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                </div>
+            <p>This job website is a lifesaver! I was feeling overwhelmed by the job search process until I discovered this platform. The easy-to-use interface, 
+                informative job listings, and responsive support team made all the
+               difference. Thanks to this website, I found a job that's a perfect fit for me</p>    
+            </div>
+        </div>
+    </div>
+    
+    <br> 
+    <footer class="footer">
+        <div class="container">
+            <div class="container-inner">
+                <br>
+                <p>Contact Us</p>
+                <div class="row">
+                    <div class="footer-col">
+                        <div class="footer-content">
+                            <img src="{%static 'image/email-logo.png'%}" width="35px">
+                            <p> Email : Sha8alny@gmail.com </p>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-content">
+                            <img src="{%static 'image/call-logo.png'%}" width="35px">
+                            <p> Hotline : 19171</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2024 Sha8alny web site . All rights reserved</p> <br>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+

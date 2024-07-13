@@ -1,0 +1,189 @@
+main{
+  margin-left: 25px; 
+  padding-top: 130px;
+  font-family: 'Poppins', sans-serif;
+}
+.features-section {
+padding: 20px;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.features-section p {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.features-section ul {
+list-style-type: none;
+padding-left: 0;
+}
+
+.features-section li {
+font-size: 16px;
+line-height: 1.6;
+margin-bottom: 8px;
+}
+
+.features-section li:before {
+display: inline-block;
+width: 1em;
+}
+div.success-stories{
+  background-color: rgb(229, 252, 225);
+}
+
+div.success-stories h2{
+  text-align: center;
+}
+
+.container {
+display: flex;
+}
+.box {
+width: 200px;
+height: 200px;
+margin: 50px;
+position: relative;
+overflow: hidden;
+border-radius: 10px;
+}
+.box img{
+  width: 100%;
+height: auto;
+transition: opacity 0.3s ease;
+}
+.box .text {
+  position: absolute;
+  top: 0;
+  padding-left:5px ;
+  width: 100%;
+  height: 100%;
+  background-color:  rgb(152, 237, 179);
+  color: rgb(23, 20, 20);
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}  
+.box:hover .text {
+opacity: 1;  /*The text is initially hidden (opacity: 0) and becomes visible (opacity: 1) when the box is hovered over*/
+}
+.box:hover img {
+opacity: 0; /*The image is initially visible and becomes hidden when the box is hovered over*/
+}
+
+.our-team {
+background-color: #f9f9f9;
+padding-top: 50px ;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+text-align: center;
+position: relative; 
+}
+
+.our-team h2 {
+font-size: 36px;
+color: #333;
+margin: 0%;
+margin-right: 3%;
+text-align: center;
+}
+
+.team-description {
+font-size: 18px;
+color: #666;
+line-height: 1.6;
+margin-bottom: 20px; 
+}
+
+.team-description p {
+margin-bottom: 20px;
+}
+
+
+img.first-photo{
+float: right;
+padding-right: 400px;
+
+}
+img.second-photo{
+float: right;
+padding-right: 150px;
+
+}
+img.our-team-first-photo{
+float: left;
+
+}
+img.our-team-second-photo{
+float: right;
+
+}
+img.JoinUS-photo{
+float: right;
+
+}
+/*  */
+.mission-div, .story-div {
+  margin: 50px 40px;
+  display: flex;
+  justify-content: space-between;
+  }
+  
+  .mission-div img, .story-div img {
+    
+  width: 500px;
+  height: 350px;
+  }
+  
+  #story-title {
+    margin: 0px 40px;
+  }
+
+.mission-div p, .story-div p {
+  
+  line-height: 2;
+}
+
+footer {
+  margin: 10px 120px;  /*space then start the main (space before all text in main )*/
+  padding-top: 100px;
+}
+footer.footer{
+  background-color:rgba(118, 200, 101, 0.359);
+}
+
+
+.footer .footer-inner{
+  max-width: 500px;
+}
+.footer-content{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+}
+.footer p{
+        text-align: center;
+        font-size: larger;
+        font-weight: bold;
+}
+
+span {
+  color:rgb(69, 192, 69);
+  font-weight: bold;
+}
+
+h1 { 
+  text-align: center;
+}
+
+.story-title, .mission-title {
+  color: rgb(33, 139, 33);
+}
+    

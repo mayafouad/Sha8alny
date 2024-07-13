@@ -1,0 +1,100 @@
+main{
+    margin-left: 25px;  /*space then start the main (space before all text in main )*/
+    padding-top: 100px;
+}
+
+div.main-img{
+    margin-left: 250px;    
+}
+
+section.Steps{ 
+    background-color: rgb(195, 234, 197);
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+div.steps-heading{ 
+text-align: center;
+}
+
+div.row{
+    margin: 30px;
+    padding-right: 100px;
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    justify-content: space-evenly;
+}
+
+div.col {
+    flex: 0 0 calc(20% - 10px); /*Adjust the width of each column */
+    margin-bottom: 0; /* Remove margin between columns */
+}
+
+div.main-card  {
+    padding: 12px;
+    line-height: 1.4; /* Adjust line height to allow for text wrapping */
+    word-wrap: break-word; /* Allow long words to wrap to the next line */
+}
+div.first-step{
+    border-radius: 30px;
+    background-color:  rgb(83, 230, 129);
+
+}
+
+div.second-step{
+    border-radius: 30px;
+    background-color:  rgb(88, 197, 123);
+
+
+}
+div.third-step{
+    border-radius: 30px;
+    background-color:  rgb(93, 175, 119);
+    
+
+}
+div.last-step{
+    border-radius: 30px;
+    background-color:  rgb(83, 145, 103);
+
+}
+
+.choose-us {
+    text-align: center;
+}
+.choose-us p {
+    font-size: 1.5em;
+}
+.choose-us ul {
+    list-style: none; /*delete dots*/
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+.choose-us li {
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.choose-us li:hover {
+    transform: scale(1.95);
+    transition: transform 0.3s ease;
+}
+footer.footer{
+background-color:rgba(118, 200, 101, 0.359);
+}
+.footer .footer-inner{
+    max-width: 500px;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.footer p{
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}
+

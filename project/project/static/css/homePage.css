@@ -1,0 +1,151 @@
+/* navigation Bar  */
+
+header{
+    position: fixed;
+    width: 100%;
+    top:0%;
+    background-color: white;
+}
+
+main{
+    margin-left: 25px;  /*space then start the main (space before all text in main )*/
+    padding-top: 150px;
+}
+
+nav.navbar{
+    border:2px rgb(195, 234, 197);
+
+}
+
+.navbar ul{
+    list-style-type: none; /*To appear only words no dots*/
+    background-color: white;
+    padding: 0%;  /*just button, no upper or lower spaces in its square*/
+    margin: 0%;   /*just buttons, no upper or lower spaces in the page*/
+    overflow: hidden; /*all navbar appear in the page till the end , the next words dont appear in same line but in next line*/
+    position: sticky;
+    top: 0;
+    
+}
+
+.navbar a{  /* Selectors are buttons*/ 
+    color: rgb(7, 7, 8);
+    text-decoration: none;    /* delete the underline (Be as a normal text)*/
+    display: block;           /*display as a block (as a box) */
+    text-align: center;  
+    font-size: 25px;
+    top: 0;
+    border-radius: 6px;
+    padding: 10px; 
+}
+
+.navbar a:hover{
+    background-color: rgb(195, 234, 197);
+}
+
+.navbar li{
+    margin: 20px;
+    float:left;   
+    position: sticky;
+    top: 0; 
+}
+
+nav .logo p{
+    font-size: 34px;
+    font-weight: bold;  /*strong text*/
+    float: left;
+    color: rgb(7, 7, 8);
+    letter-spacing: 1px; 
+    text-transform: uppercase;
+    background-color: white;
+    margin: 0%;   
+    padding: 26px;  /*I was editing it till it appeara in same line with buttons*/      
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+.wrapper {
+    /* max-width: 500px; */
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+}
+
+div.wrapper h3 {
+    margin-top: 0;
+}
+
+
+textarea {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn.submit, .btn.cancel {
+    background-color: #13c631;
+}
+.btn.submit:hover,
+.btn.cancel:hover {
+    filter: brightness(90%);
+}
+
+.btn.group {
+    text-align: right;
+}
+
+.rating {
+    margin-bottom: 20px;
+}
+
+.rating i {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.rating i:hover,
+.rating i.active {
+    color: gold;
+}
+
+img{
+    float: right;
+    padding-right: 180px;
+}
+
+span {
+    color: #13c631;
+}
+
+
+.top-part {
+    margin: 150px 40px;
+}
+
+.opnion-msg  span{
+    color: #13c631;
+
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 90px;
+}
+
+.opnion-msg p {
+    margin-top: 30px;
+    line-height: 2;
+}

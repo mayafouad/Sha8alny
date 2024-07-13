@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+    <title>Sha8alni - Log in</title>
+</head>
+<body>
+    {% load static %}
+    <img src="{% static 'image/login1.jpeg' %}" id="imglog" width="500 px" height="500 px">
+    <div id="div1">
+        <h2>Log in</h2>
+        <form action="{%url 'login' %}" method="post">
+            {% csrf_token %}
+            <div id="userico">
+                <img src="{% static 'image/username.jpg' %}" width="10 px" height="10 px" id="userlog">
+                <input id="use" class="te" type="text" name="username" placeholder="Type your username">
+            </div>
+            <br>
+            <div id="passico">
+                <img src="{% static 'image/lock.jpeg.jpg' %}" width="10 px" height="10 px" id="lock">
+                <input id="pass" class="te" type="password" name="password" placeholder="Type your password">
+                <br>
+            </div>
+            <p><input id="check" type="checkbox" name="remember" value="remember me"> Remember me</p>
+            <p id="psign">Don't have an account yet? <a id="link" href="{%url 'signUp'%}">Sign up</a></p>
+            <div id="buttonsleft">
+                <input id="b1" class="bs" type="submit" value="Login">
+            </div>
+        </form>
+        {% if error_message %}
+            <p class="error">{{ error_message }}</p>
+        {% endif %}
+    </div>
+    
+    <script src="{% static 'js/login.js' %}"></script>
+</body>
+</html>

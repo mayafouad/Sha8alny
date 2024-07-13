@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+ }
+ body{
+    background-color:white
+ }
+ h2{
+    padding-top: 20px;
+    text-align: center;
+    color:rgb(186, 21, 54);
+    font-size: 25px;
+ }
+ .companies{
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 25px;
+ }
+ .card
+ {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    padding-right: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(21, 2, 2, 0.647);
+    border-radius: 10px;
+    background-color: rgb(203, 231, 203)
+ }
+ .left{
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    border: 20%;
+ }
+ .left img 
+ {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; 
+    margin-top: 15px;
+    margin-left: 15px;
+ }
+ .center{
+    padding-left: 25px;
+    width: 80%;
+ }
+ .center h3{
+    margin-left: 5px;
+    padding-top: 55px;
+    font-size: 22px;
+    color: brown;
+ }
+ .details{
+    padding-bottom: 15px;   
+    padding-left: 20px;
+    margin-top: 5px;
+    line-height: 1.7;
+ }
+ span{
+    color:seagreen;
+    font-size: 20px;
+    padding-bottom: 20px; 
+    margin-bottom: 10px;
+ }
+ a{
+    text-decoration: none;
+    color: rgb(102, 27, 200);
+ }

@@ -1,0 +1,206 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>available jobs</title>
+
+    <link rel="stylesheet" href="{% static 'css/jobDetails.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'CSS/navBar.css' %}">
+    <link rel="stylesheet" href="{%static 'CSS/aboutUs.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <nav>
+        <nav>
+            {% if request.session.current_user == "user" %}
+        <div class = "nav-bar">
+            <div class = "nav-left-section">
+                <p>   <span>S</span>ha8alny </p>
+            </div>
+            <div class = "nav-right-section">
+            <ul>
+                <li> <a href ="{%url 'homePage'%}"> Home</a> </li>
+                <li> <a href ="{%url 'homePage'%}"> search</a>  </li>
+                <li> <a href ="{%url 'jobDetails'%}">Jobs</a>  </li>
+                <li> <a href ="{%url 'company'%}"> Companies</a>  </li>
+                <li> <a href ="{%url 'userCurrentlyAppliedJobs' %}">Applied Jobs</a>  </li>
+                <li> <a href ="{%url 'userProfileLast'%}">profile</a>  </li>
+                <li> <a href ="{%url 'logout'%}" id = "userLogOut">
+                    <i class="fa fa-sign-out" style = "color:black">  </i> </a>  
+            </li>  
+        </ul>
+        </div>
+        </div>
+            
+        {% elif request.session.current_user == "admin" %}
+        <div class = "nav-bar">
+            <div class = "nav-left-section">
+                <p>  <span>S</span>ha8alny </p>
+            </div>
+            <div class = "nav-right-section">
+            <ul>
+                <li> <a href ="{%url 'homePage'%}"> Home</a> </li>
+                <li> <a href ="{%url 'homePage'%}"> search</a>  </li>
+                <li> <a href ="{%url 'jobDetails'%}">Jobs</a></li>
+                <li> <a href ="{%url 'adminProfile' %}">My Profile</a></li>
+            <li> <a href = "{% url 'logout'%}" id = "adminLogOut"> <i class="fa fa-sign-out"></i> </a> </li>
+            </ul>
+            </div>
+        {% else %}
+        <div class = "nav-bar">
+            <div class = "nav-left-section">
+                <p>  <span>S</span>ha8alny </p>
+            </div>
+            <div class = "nav-right-section">
+                <ul>
+                <li><a href="{%url 'MainHomePage'%}">Home</a></li>
+                <li><a href="{%url 'signUp'%}">sign up</a></li>
+                <li><a href="{%url 'login'%}">log in</a></li>
+                <li><a href="{%url 'aboutUs'%}">AboutUs</a></li>
+                <li><a href="{%url 'jobDetails'%}">Available jobs</a></li>
+                </ul>
+            </div>
+    </div>
+    
+        {% endif %}
+        </nav>
+    </nav>
+    <form action="{% url 'jobDetails' %}" method="GET">
+        <div class="search-container">
+            <div class="search">
+                <input type="text" name="q" id="search" placeholder="Search" class="form-control form-control-lg" />
+            </div>
+            <div class="btn-search">
+                <button type="submit" id="searchtitle" class="btn btn-dark btn-lg">
+                    <i class="fa fa-search search-icon">
+                    </i>
+                </button>
+
+            </div>
+        </div>
+    </form>
+
+    <div id="search-div-results">
+        {% if requestSearch %}
+        {% for job in JobList %}
+        <div class="second" id="a">
+            <div class="job-title">
+                <h2>{{ job.job_title }}</h2>
+            </div>
+            <hr>
+
+            <div>
+                <p><strong>Company:</strong> {{ job.job_company }}</p>
+            <p><strong>Location:</strong> {{ job.job_location }}</p>
+            <p><strong>Year Of experience:</strong> {{ job.job_experience_year}}</p>
+            <p><strong>Category:</strong> {{ job.job_category }}</p>
+            <h3>Job Description</h3>
+            <p>{{ job.job_description }}</p>
+            <h3>Qualifications</h3>
+            <p>{{ job.job_qualification }}</p>
+
+            <h3>Status:</h3>
+            <p>{{ job.job_status}}</p>
+            <h3>Salary:</h3>
+            <p>{{ job.job_salary }}</p>
+            <h3>Type of the job:</h3>
+            <p>{{ job.job_type}}</p>
+
+
+            </div>
+
+            {% if request.session.current_user == "user" %}
+                <button type = "submit" data_job_id = "{{job.id}}" class  = "apply-btn btn" name = "job_id" value="{{job.id}}"> 
+                    apply
+                </button>
+            {% endif %}
+        </div>
+        {% endfor %}
+       
+        {% endif %}
+    </div>
+
+    <div id="all-jobs-divs">
+        {% if not requestSearch %}
+        {% for job in JobList %}
+        <div class="second" id="a">
+            <div class="job-title">
+                <h2>{{ job.job_title }}</h2>
+            </div>
+            <hr>
+
+            <div>
+                <p><strong>Company:</strong> {{ job.job_company }}</p>
+            <p><strong>Location:</strong> {{ job.job_location }}</p>
+            <p><strong>Year Of experience:</strong> {{ job.job_experience_year}}</p>
+            <p><strong>Category:</strong> {{ job.job_category }}</p>
+            <h3>Job Description</h3>
+            <p>{{ job.job_description }}</p>
+            <h3>Qualifications</h3>
+            <p>{{ job.job_qualification }}</p>
+
+            <h3>Status:</h3>
+            <p>{{ job.job_status}}</p>
+            <h3>Salary:</h3>
+            <p>{{ job.job_salary }}</p>
+            <h3>Type of the job:</h3>
+            <p>{{ job.job_type}}</p>
+
+
+            </div>
+
+            {% if request.session.current_user == "user" %}
+                <button type = "submit" data_job_id = "{{job.id}}" class  = "apply-btn btn" name = "job_id" value="{{job.id}}"> 
+                    apply
+                </button>
+            {% endif %}
+        </div>
+        {% endfor %}
+        {% endif %}
+            
+    </div>
+
+    <script>
+
+    let applyButtons = document.querySelectorAll(".apply-btn");
+    applyButtons.forEach(button => {
+    button.addEventListener('click', function() {
+     let job_Id = button.getAttribute("data_job_id")
+     let request = new XMLHttpRequest();
+     request.open("GET", "http://127.0.0.1:8000/applyToJob/" + job_Id + "/", true);
+     request.setRequestHeader('Content-Type', 'application/json');
+     request.onreadystatechange = function() {
+         if (request.readyState === XMLHttpRequest.DONE) {
+             if (request.status === 200) {
+                 // Optionally handle success response
+                 console.log(job_Id);
+                 console.log('Job application successful');
+             } else {
+                 // Handle errors
+                 console.error('Error applying to job:', request.status);
+             }
+         }
+     };
+     // Send the job ID as JSON data
+     request.send();
+   });
+   });
+ </script>
+<script src="{% static 'js/jobDetails.js' %}">
+
+</script>
+<script src="{% static 'js/userAppliedJobs.js' %}">
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,472 @@
+/* 
+    GENERAL STYLING 
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: white;
+}
+li { 
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+:root {
+    --main-color: rgb(29, 163, 29);
+    --secoundry-color: rgb(69, 192, 69);
+
+  }
+  
+/* 
+    NAVIGATION BAR
+*/
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 30px;
+    position: sticky;
+}
+
+.nav-bar ul li{
+    display: inline-block;
+    margin:10px 20px 5px 0px;
+    color:var(--main-color);
+
+}
+
+.nav-left-section {
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+}
+
+.nav-left-section i {
+    color:#0d6dc7;
+}
+.nav-left-section p {
+    font-weight: bold;
+    color:#0d6dc7;
+}
+
+.nav-bar ul li a:hover{
+    display: inline-block;
+    color: var(--main-color);
+
+}
+
+.nav-right-section ul li hr {
+    display: none;
+}
+
+.nav-right-section ul li:hover hr{
+    display: block;
+    border-color: #0d6dc7;
+}
+
+.website-logo{
+    height: 40px;
+    width: 100px;
+}
+
+
+
+/* 
+
+    TOP SECTION
+    - CONTAINS USER PROFILE AND GENERAL INFO
+ 
+*/
+
+.top-section {
+    display: flex;
+}
+
+/*  
+    TOP LEFT SECTION 
+    - CONATAINS USER PROFILE AND SOCIAL ACCOUNTS
+
+*/
+
+.top-left-section{
+    background-color: white;
+    margin: 60px 0.5px 60px 60px;
+    width: 25%;
+    padding: 20px;
+    box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+
+
+}
+
+.top-left-section h1, .top-left-section h2 {
+    margin: 15px 0px;
+    color: var(--main-color);
+}
+
+#social-accounts ul li {
+    margin: 15px 0px;
+}
+
+
+.user-logo{
+    height: 70px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* 
+    TOP RIGHT SECTION 
+    - CONTAINS USER GENERAL INFO
+    
+*/
+
+.top-right-section{
+    margin: 60px 58px 60px 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 70%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+
+.top-right-section h1{
+    margin: 90px 0px 30px 0px;
+    color:var(--main-color);
+
+}
+
+.top-right-section h3 {
+    margin-bottom: 10px;
+}
+
+.general-info-item span{
+    margin: 30px 10px 30px 10px;
+    color: gray;
+    font-weight: bold;
+    
+}
+
+#first-general-info-line, #second-general-info-line{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px;
+    margin-bottom: 90px;
+}
+
+#general-info-button {
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    transform: translate(-90%, -210%);
+}
+
+
+/*  
+    HIDDEN FORMS POP-UPS
+*/
+#add-work-form, #add-education-form, #add-soft-skill-form,#add-resume-form, #social-account-form, #general-info-form{
+    display: none;
+    box-shadow: 3px 2px 10px 5px gray;
+    position: fixed;
+    z-index: 8;
+    top: 5%;
+    left: 35%;
+    width: 28%;
+    height: 80vh;
+    background-color: white;
+    border: 2px gray solid;
+    border-radius: 10px; 
+    align-items: center;
+    padding: 30px;
+
+}
+
+#add-soft-skill-form, #add-resume-form{
+    height: 50vh;
+}
+
+#add-work-form h1, #add-education-form h1, #add-soft-skill-form h1,#add-resume-form h1, #social-account-form h1,  #general-info-form h1{
+    margin: 30px 0px 20px;
+    text-align: center;
+    color: var(--secoundry-color);
+}
+
+#general-info-form {
+    height: 85vh;
+}
+
+#social-account-form {
+    height: 60vh;
+}
+
+
+#about-form{
+    display: none;
+    box-shadow: 3px 2px 10px 5px gray;
+    position: fixed;
+    z-index: 8;
+    top: 5%;
+    left: 35%;
+    width: 28%;
+    height: 70vh;
+    background-color: white;
+    border: 2px gray solid;
+    border-radius: 10px; 
+    align-items: center;
+    padding: 30px;
+}
+
+#about-form h1 {
+    color:var(--main-color);
+    margin-top: 15px;
+    transform: translateX(37%);
+}
+
+#about-form textarea {
+    transform: translateX(11%) translateY(4%);
+    resize: none;
+    border: 2px solid gray;
+}
+
+#about-form #update-about-button{
+    transform: translateX(60%);
+}
+
+#about-form textarea:focus{
+    border-color: var(--main-color);
+}
+
+.about-first-line {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.about-first-line a {
+    margin: 15px 0px;
+    text-decoration: underline;
+    color:var(--main-color);
+}
+
+
+.form-item{
+    position: relative;
+    width: 98%;
+    margin: 20px 20px 15px;
+}
+
+.form-item input{
+    width: calc(100% - 50px);
+    height: 30px;
+    padding: 3px;
+    padding-left: 10px;
+    margin-top: 5px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    outline: none;
+}
+.form-item label{
+    
+    margin-bottom: 30px;
+    bottom: 10%;
+    color:var(--main-color);
+}
+
+.form-button, #sumbit-social-accounts, #edit-general-info-button {
+   
+    transform: translate(65%, -3%);
+}
+
+.exit-button{
+    position: absolute;
+    top: -3%;
+    left: 89%;
+    width: 30px;
+    height: 20px;
+    border-radius: 0px;
+    background-color: white;
+    color: var(--main-color);
+    font-size: 24px;
+}
+
+.exit-button:hover{
+    background-color: white;
+    color: var(--main-color);
+    border: none;
+}
+
+/* 
+    PAGE BOTTOM SECTION 
+    - CONATINS EXPERICE, EDUCATION, SKILL, AND RESUME DIV
+*/
+#work-experience, #soft-skills, #education, #resume{
+    margin: 10px 60px 60px 60px;
+    border: 3px transparent solid;
+    border-radius: 5px;
+    width: 92%;
+    background-color: white;
+    box-shadow:  lightgray;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+
+}
+
+#work-experience hr, #soft-skills hr, #education hr, #resume hr{
+    width: 100%;
+    margin: 10px 0px;
+    border-color: #dfe1e4;
+
+}
+
+#work-experience h1, #soft-skills h1, #education h1, #resume h1{
+    color:var(--main-color);
+    margin: 10px 0px 0px 30px;
+}
+
+#work-experience:hover, #soft-skills:hover, #education:hover, #resume:hover{
+    box-shadow: 7px 7px 20px 2px rgba(154, 154, 154, 0.5);
+}
+
+/* 
+    BLUR STYLING WHEN A FORM IS DISPLAYED
+*/
+
+
+.blur{
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* 
+    STYLING FOR ADDING NEW USER DATA
+*/
+
+.new-experice {
+    margin: 10px 20px;
+}
+
+.new-experice p {
+    color: gray;
+}
+
+
+.skill-div{
+    border: 2px var(--main-color) solid;
+    border-radius: 15px;
+    padding: 5px;
+    height: 20px;
+    width: 10%;
+    display: inline-block;
+    margin: 10px 5px;
+    text-align: center;
+}
+
+.user-data p{
+    margin-left: 15px;
+    color: gray;
+}
+.user-data h4{
+    margin-left: 5px;
+}
+
+.user-skill {
+    border: 2px var(--main-color) solid;
+    height: 30px;
+    width: 10%;
+    color:var(--main-color);
+    background-color: white;
+    margin: 10px;
+    display: inline-block;
+}
+
+
+
+/* 
+    DISPLAYING ERROR IN FORMS
+*/
+#required-job-title
+{
+    margin-left: 5px;
+}
+
+.required-input input{
+    border: 2px rgb(155, 13, 13) solid;
+    background-color: rgb(248, 169, 169);
+}
+
+.required-input label{
+    color: rgb(155, 13, 13);
+}
+
+
+.required-education-school, .required-education-degree, .required-education-start-year, .required-education-end-year,
+.required-job-title, .required-company-name, .required-start-date, .required-end-date, .required-skill {
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+/* 
+    INPUT BOX FOR UPLOADING RESUME STYLING
+*/
+
+#uploaded-resume{
+    position: relative;
+    width: 75%;
+    align-items: center;
+}
+
+
+/* 
+    STYLING FOR UPLOADING A NEW USER PROFILE PHOTO
+*/
+
+#select-image-icon {
+    position: relative;
+    top: 8%;
+    left: -9%;
+}
+#select-image-icon i{
+    color: var(--main-color);
+}
+
+/* 
+    GENERAL PAGE BUTTON STYLINGS
+*/
+
+button, .form-button{
+    margin: 30px 10px;
+    background-color: var(--main-color);
+    color: white;
+    border: 2px white solid;
+    height: 40px;
+    width: 160px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3ms;
+
+}
+button:hover, .form-button:hover {
+
+    border-color: var(--main-color);
+    background-color: var(--secoundry-color);
+    color: white;
+
+}

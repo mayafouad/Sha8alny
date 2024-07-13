@@ -1,0 +1,41 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --primary-color: #09c872;
+    --secondary-color: #127d2c;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 70px 0px;
+}
+
+main .left-section {
+    width: 60%;
+    margin-top: 70px;
+}
+
+.left-section h1 strong {
+    color: var(--primary-color);
+}
+
+
+.left-section h1,h2,  h3 {
+    margin: 5px 0px;
+}
+
+p {
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 2;
+    text-align: justify;
+}
+
+.right-section img {
+    margin-right: 0px;
+    height: 450px;
+    width: 600px;
+}

@@ -1,0 +1,190 @@
+header{
+    box-shadow: 2px 2px 5px #35544b86;
+}
+
+body{
+    margin-top: 160px;
+  background-size: cover;
+  background-attachment:scroll;
+  background-position: center center;
+    color: #000000;
+    font-size: large;
+}
+:root {
+    :root {
+        --main-color: rgb(29, 163, 29);;
+        --sub-color:  rgb(69, 192, 69);
+    }
+}
+.box{
+    box-shadow: 2px 2px 5px #35544b86;
+    background-color: #ffffff;
+    width: 80%;
+    height: max-content;
+    padding: 10px;
+    margin: 5% 10%;
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+span{
+    color: #ffffff;
+}
+h1{
+    color: #000000;
+    
+}
+.box h1{
+    color: #ffffff;
+    width: 65%;
+    padding: 5px 10px;
+    border: 2px solid  #ffffff;
+    border-radius: 5px;
+    background: linear-gradient(to right,var(--main-color) ,var(--sub-color) , #ffffff); 
+}
+#profile{
+    width: 80%;
+    height: 220px;
+    padding: 5px 0px 15px 30px;
+}
+
+#profile .profile-image{
+    float: right;
+    margin-right: 10px;
+    margin-top: -98px;
+    width: 25%;
+    height: 100%;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+}
+
+#AddJob{
+    padding-left: 20px;
+}
+#AddJob form{
+    padding: 10px 0px 10px 10px;
+    margin-right: 10px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+}
+.btn ,input[type="submit"]{
+    color: #ffffff;
+    background-color: var(--main-color);
+    border:2px solid rgba(105, 156, 127, 0);
+    border-radius: 7px;
+}
+.btn:hover , input[type="submit"]:hover{
+    margin-top : 5px;
+    background-color: var(--sub-color);
+}
+
+.pbox div{
+    background-color: var(--main-color);
+}
+#Posts{
+    width: 81%;
+}
+#MyPosts h3{
+    color: #ffffff;
+}
+
+#Posts h1{
+    margin-left: 48px;
+}
+
+#MyPosts div{
+    margin:10px 50px 10px 10px ;
+    padding: 5px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+}
+#MyPosts div section{
+    color: #ffffff;
+    padding: 5px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    margin-bottom:10px ;
+}
+
+#MyPosts ul {
+    position:absolute;
+    left:60%;
+    right: 18%;
+}
+#MyPosts ul li{
+    float: right;
+}
+#MyPosts button{
+    background: var(--main-color);
+}
+#MyPosts .btn:hover{
+    background-color: var(--sub-color);
+}
+label{
+    font-weight: bold ;
+}
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.popbox{
+    display: none;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    width: 300px;
+    height: max-content;
+    padding: 15px;
+    background: linear-gradient(to left, rgba(44, 127, 80, 0.4) ,#ffffff); 
+    border: 2px solid var(--sub-color) ;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(44, 127, 80, 0.4);
+}
+
+.popbox img{
+    border: 2px solid #64C2AE;
+    border-radius:  5px;
+}
+
+.Epopbox{
+    display: none;
+    position:absolute;
+    left: 50%;
+    margin-top: -20%;
+    transform: translate(-50%,-50%) ;
+    width: max-content;
+    height: max-content;
+    padding: 15px;
+    background: linear-gradient(to left,  rgba(44, 127, 80, 0.4) ,#ffffff); 
+    border: 2px solid var(--sub-color) ;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(44, 127, 80, 0.4);
+}
+.popbox span, .Epopbox span {
+    color: #000000;
+}
+.close-btn{
+    cursor: pointer;
+    background-color: var(--main-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+.close-btn:hover{
+    background-color: var(--sub-color);
+}
+section{
+    color: #ffffff;
+    padding: 5px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    margin-bottom:10px ;
+}

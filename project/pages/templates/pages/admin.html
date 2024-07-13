@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--By: Maya-->
+    <title>My Profile</title>
+    <link rel="stylesheet" href="{%static 'css/navBar.css'%}">
+    <link rel="stylesheet" href="{%static 'css/adminprofile.css' %}">
+    <script type="text/javascript" src="{% static 'js/admin.js'%}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="{% static 'js/dynamicNavBar.js'%}"></script>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <nav>
+                {% if request.session.current_user == "admin" %}
+                <div class = "nav-bar">
+                    <div class = "nav-left-section">
+                        <p>  <span>S</span>ha8alny </p>
+                    </div>
+                    <div class = "nav-right-section">
+                    <ul>
+                        <li> <a href ="{%url 'homePage'%}"> Home</a> </li>
+                        <li> <a href ="{%url 'homePage'%}"> search</a>  </li>
+                        <li> <a href ="{%url 'jobDetails'%}">Jobs</a></li>
+                        <li> <a href ="{%url 'adminProfile' %}">My Profile</a></li>
+                       <li> <a href = "{% url 'logout'%}" id = "adminLogOut"> 
+                        <i class="fa fa-sign-out" style = "color:black">  </i> </a> </li>
+                    </ul>
+                    </div>
+        
+            {% endif %}
+            </nav>
+            
+        </nav>
+    </header> 
+       <div id="profile" class="box">
+        <h1><span class="material-symbols-outlined">person </span> My Info</h1>
+        <img class="profile-image" id="pimg" src="{{ user.image.url }}" alt="Profile Image" width="100" height="100">
+        <form>
+            <label for="profile-name">Name:</label>
+            <output id="profile-name"></output> <br>
+            <label for="profile-company">Company:</label>
+            <output id="profile-company"></output><br>
+            <label for="mail"> E-Mail:</label>
+            <output id="profile-mail"></output><br>
+        </form>
+        <br>
+       <button class="btn" onclick="editInfo()"> Edit My Info </button>
+            
+        </div> 
+
+
+        <div id="EditInfo" class="popbox" >
+            <div class="close-btn" onclick="closeInfo()">&times;</div>
+            <div>
+            <h1><span class="material-symbols-outlined">person </span> My Info</h1>
+            <form>
+                <label for="edit-image">Profile Image:</label>
+                <input type="file" id="edit-image" accept="image/*" required><br>
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name" required> <br>
+                <label for="edit-company">Company:</label>
+                <input type="text" id="edit-company" required><br>
+                <label for="edit-mail"> E-Mail:</label>
+                <input type="email" id="edit-mail" required><br>
+            </form>
+           <button class="btn" onclick="saveInfo()"method="POST">{% csrf_token %}> Save My Info </button>
+
+             </div>   
+                
+            </div> 
+
+        
+        <div  id="AddJob" class="box">
+            <h1 ><span class="material-symbols-outlined">work</span>Add job</h1>
+            <form onsubmit="addJob(event)" method="POST">{% csrf_token %}
+                <label for="ID">ID</label> <br>
+                <input type="text" id="ID" name="ID" required> <br>
+                <label for="JT">Job Title</label> <br>
+                <input type="text" id="JT" name="JobTitle" required> <br>
+                <label for="location">Location</label> <br>
+                <input type="text" id="location" name="location" required> <br>
+                <label for="Field">Field/Category</label><br>
+                <input type="text" id="Field" name="Field" required> <br>
+                <label for="experience">Years of experience</label><br>
+                <select id="experience" name="experience" required>
+                    <option value="zero">Undergraduate</option>
+                    <option value="no">Fresh graduate</option>
+                    <option value="two">Tow Years of experience</option>
+                    <option value="five">Five Years of experience</option>
+                    <option value="more">More than five Years of experience</option>
+                </select> <br>
+                <label for="Type">Type of the job</label> <br>
+                <input type="radio" id="internship" name="type" value="Internship" required>
+                <label for="internship">Internship</label> <br>
+                <input type="radio" id="fulltime" name="type" value="Full Time">
+                <label for="fulltime">Full time</label><br>
+                <input type="radio" id="parttime" name="type" value="Part Time">
+                <label for="parttime">Part time</label><br>
+                <label for="description">Job Description</label> <br>
+                <textarea id="description" name="description" rows="5" cols="40" required></textarea><br>
+                <label for="qualifications">Qualifications</label> <br>
+                <textarea id="qualifications" name="qualifications" rows="5" cols="40" required></textarea><br>
+                <label for="salary">Salary</label> <br>
+                <input type="text" id="salary" name="salary" required> <br>
+                <label for="status" >job Status </label> <br>
+                <input type="radio" id="open" name="status" value="open" required>
+                <label for="open">Open</label> <br>
+                <input type="radio" id="close" name="status" value="close">
+                <label for="close">Close</label><br>
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+  
+    <div class="box" id="Posts">
+            <h1 ><span class="material-symbols-outlined">post</span>My Posts</h1>        
+        <ol id="MyPosts">
+            
+        </ol>
+    </div>
+    
+
+
+    <div  id="editPost" class="Epopbox">
+        <div class="close-btn" onclick="closeEdit()">&times;</div>
+        <div>
+        <h1 ><span class="material-symbols-outlined">work</span>Edit job</h1>
+        <form onsubmit="saveEditedPost(event)" method="POST">{% csrf_token %}
+            <label for="EJT">Job Title</label> <br>
+            <input type="text" id="EJT" name="JobTitle"  required> <br>
+            <label for="Elocation">Location</label> <br>
+            <input type="text" id="Elocation" name="location" required> <br>
+            <label for="EField">Field/Category</label><br>
+            <input type="text" id="EField" name="Field" required> <br>
+            <label for="Eexperience">Years of experience</label><br>
+            <select id="Eexperience" name="experience" required>
+                <option value="zero">Undergraduate</option>
+                <option value="no">Fresh graduate</option>
+                <option value="two">Tow Years of experience</option>
+                <option value="five">Five Years of experience</option>
+                <option value="more">More than five Years of experience</option>
+            </select> <br>
+            <label for="EType" id="Etype">Type of the job</label> <br>
+            <input type="radio" id="Einternship" name="Etype" value="Internship" required>
+            <label for="internship">Internship</label> <br>
+            <input type="radio" id="Efulltime" name="Etype" value="Full Time">
+            <label for="fulltime">Full time</label><br>
+            <input type="radio" id="Eparttime" name="Etype" value="Part Time">
+            <label for="parttime">Part time</label><br>
+            <label for="Edescription">Job Description</label> <br>
+            <textarea id="Edescription" name="description" rows="5" cols="40" required></textarea><br>
+            <label for="Equalifications">Qualifications</label> <br>
+            <textarea id="Equalifications" name="qualifications" rows="5" cols="40" required></textarea><br>
+            <label for="Esalary">Salary</label> <br>
+            <input type="text" id="Esalary" name="salary" required> <br>
+            <label for="status">job Status </label> <br>
+            <input type="radio" id="Eopen" name="status" value="Open" required>
+            <label for="open">Open</label> <br>
+            <input type="radio" id="Eclose" name="status" value="Close">
+            <label for="close">Close</label><br>
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+    </div>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

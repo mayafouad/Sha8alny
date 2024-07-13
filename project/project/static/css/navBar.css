@@ -1,0 +1,65 @@
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top:0%;
+    background-color: white;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    border:4px rgb(195, 234, 197);
+}
+
+.nav-bar ul{
+    list-style-type: none; /*To appear only words no dots*/
+    background-color: white;
+    padding: 0%;  /*just button, no upper or lower spaces in its square*/
+    margin: 0%;   /*just buttons, no upper or lower spaces in the page*/
+    overflow: hidden; /*all navbar appear in the page till the end , the next words dont appear in same line but in next line*/
+    position: sticky;
+    top: 0;
+}
+
+.nav-bar a{  /* Selectors are buttons*/ 
+    color: rgb(7, 7, 8);
+    text-decoration: none;    /* delete the underline (Be as a normal text)*/
+    display: block;           /*display as a block (as a box) */
+    text-align: center;  
+    top: 0;
+    border-radius: 6px;
+    padding: 10px; 
+}
+
+.nav-bar a:hover{
+    background-color: rgb(195, 234, 197);
+}
+
+.nav-bar li{
+    margin: 20px;
+    float:left;   
+    position: sticky;
+    top: 0; 
+}
+
+nav .nav-left-section p{
+    font-size: 20px;
+    font-weight: bold;  /*strong text*/
+    float: left;
+    color: rgb(7, 7, 8);
+    letter-spacing: 1px; 
+    
+    background-color: white;
+    margin: 0%;   
+    padding: 26px;  /*I was editing it till it appeara in same line with buttons*/      
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+.nav-left-section p span {
+    color: #09c872;
+    font-size: 28px;
+}

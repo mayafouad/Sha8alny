@@ -1,0 +1,405 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <link rel = "stylesheet" href = "{% static 'css/userProfile2.css' %}">
+    <title>User Profile</title>
+    <link rel = "stylesheet" href = "{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container">
+       <nav>
+        <nav>
+            {% if request.session.current_user == "user" %}
+        <div class = "nav-bar">
+            <div class = "nav-left-section">
+                <p>   <span>S</span>ha8alny </p>
+            </div>
+            <div class = "nav-right-section">
+            <ul>
+                <li> <a href ="{%url 'homePage'%}"> Home</a> </li>
+                <li> <a href ="{%url 'homePage'%}"> search</a>  </li>
+                <li> <a href ="{%url 'jobDetails'%}">Jobs</a>  </li>
+                <li> <a href ="{%url 'company'%}"> Companies</a>  </li>
+                <li> <a href ="{%url 'userCurrentlyAppliedJobs'%}">Applied Jobs</a>  </li>
+                <li> <a href ="{%url 'userProfileLast'%}">profile</a>  </li>
+                <li> <a href ="{%url 'logout'%}" id = "userLogOut">
+                    <i class="fa fa-sign-out" style = "color:black">  </i> </a>  
+            </li>  
+        </ul>
+        </div>
+        </div>
+            
+        {% elif request.session.current_user == "admin" %}
+        <div class = "nav-bar">
+            <div class = "nav-left-section">
+                <p>  <span>S</span>ha8alny </p>
+            </div>
+            <div class = "nav-right-section">
+            <ul>
+                <li> <a href ="{%url 'homePage'%}"> Home</a> </li>
+                <li> <a href ="{%url 'homePage'%}"> search</a>  </li>
+                <li> <a href ="{%url 'jobDetails'%}">Jobs</a></li>
+                <li> <a href ="{%url 'admin' %}">My Profile</a></li>
+                <li> <a href ="{%url 'admin#AddJob' %}">Add Job</a></li>
+                <li> <a href ="{%url 'admin#MyPosts' %}">My Posts</a></li>
+            <li> <a href = "{% url 'logout'%}" id = "adminLogOut"> Log Out</a> </li>
+            </ul>
+            </div>
+            </div>
+        {% else %}
+        <div class = "nav-bar">
+            <div class = "nav-left-section">
+                <p>  <span>S</span>ha8alny </p>
+            </div>
+            <div class = "nav-right-section">
+                <ul>
+                <li><a href="{%url 'MainHomePage'%}">Home</a></li>
+                <li><a href="{%url 'signUp'%}">sign up</a></li>
+                <li><a href="{%url 'login'%}">log in</a></li>
+                <li><a href="{%url 'aboutUs'%}">AboutUs</a></li>
+                <li><a href="{%url 'jobDetails'%}">Available jobs</a></li>
+                </ul>
+            </div>
+    </div>
+    
+        {% endif %}
+        </nav>
+
+       </nav>
+    
+        <div class="top-section">
+            <div class = "top-left-section">
+                <div  id = "user-info">
+                    
+                    <h1> {{userDetails.username}} </h1>
+                </div>
+    
+                <div id = "about-user">
+                    <div class="about-first-line">
+                        <h2>About</h2>
+                        <a href = "#" onclick ="showForm('about-form')"> Edit </a>
+                    </div>
+                    
+                    <p id = "about-paragraph">
+                       {{generalInfo.user_description_info}}
+                    </p>
+    
+                </div>
+    
+                <div id = "social-accounts">
+                    <h2>Social Accounts</h2>
+                    <ul>
+                        <li>
+                            <i class="fab fa-facebook"></i>
+                            <a href = "{{socialApps.facbook_url}}" id = "user-facebook">
+                                facebook
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa fa-linkedin"></i>
+                            <a href= "{{socialApps.linkiden_url}}" id = "user-linkden">linkden</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-twitter"></i>
+                            <a href = "{{socialApps.twitter_url}}" id = "user-twitter">twitter </a>
+                        </li>
+                    </ul>   
+                    <button class="page-button" onclick = "showForm('social-account-form')"> Edit Accounts </button>
+                </div>
+    
+            </div>
+    
+            <div class = "top-right-section">
+    
+                <h1>General Info</h1>
+    
+                <div id="first-general-info-line">
+                    <div class = "general-info-item">
+                        <h3>Name</h3>
+                        <span id ="general-info-name"> {{userDetails.username}}</span>
+                    </div>
+                    <div class = "general-info-item">
+                        <h3>Phone Number</h3>
+                        <span id = "general-info-number"> {{userDetails.phone_number}} </span>
+                    </div>
+                    <div class="general-info-item">
+                        <h3>City of residence</h3>
+                        <span id = "general-info-city"> {{generalInfo.user_city_of_resideance}} </span>
+                    </div>
+    
+                </div>
+    
+                <div id="second-general-info-line">
+                    <div class="general-info-item">
+                        <h3>Email </h3>
+                        <span id = "general-info-email">  {{userDetails.email}} </span>
+                    </div>
+                    <div class="general-info-item">
+                        <h3>Current Job Title </h3>
+                        <span id = "general-info-job-title"> {{generalInfo.user_current_position}} </span>
+                    </div>
+                    <div class = "general-info-item">
+                        <h3>Gender</h3>
+                        <span id = "general-info-gender"> {{userDetails.gender}} </span>
+                    </div>
+                </div>
+                 
+                <button class = "page-button" onclick="showForm('general-info-form')" id = "general-info-button">  
+                    Edit General Info
+                </button>    
+            </div>
+            
+        </div>
+    
+        <div class = "bottom-section">
+            <div id = "work-experience" >
+                <h1>Work Experience</h1>
+                <hr> 
+                {% for exp in experience%}
+                   <div class = "user-data">
+                      <h4>{{exp.experience_job_title}} </h4>
+                      <p> {{exp.experience_company}}</p>
+                      <p> {{exp.experience_start_date }}  "  to "  {{exp.experience_end_data}}</p>
+                  </div>
+                {% endfor %}
+        
+                <button id = "add-Work-button" onclick="showForm('add-work-form')" class ="page-button">Add Experience</button>  
+            </div>
+        
+        
+            <div id = "education">
+                <h1>Education</h1>
+                <hr>
+                {% for edu in education%}
+                   <div class = "user-data">
+                      <h4>{{edu.education_school}} </h4>
+                      <p> {{edu.education_degree}}</p>
+                      <p> {{edu.education_start_year }}   to   {{edu.education_end_year}}</p>
+                   </div>
+                {% endfor %}
+                <button onclick="showForm('add-education-form')" id ="add-education-button" class ="page-button"> Add Education </button>       
+            </div>
+        
+            <div id = "soft-skills">
+                <h1>Soft Skills</h1>
+                <hr>
+                {% for skill in skills %}
+                <button class="user-skill">
+                    {{ skill.skill }}
+                </button>
+                {% endfor %}
+                
+                <button id = "add-skill-button" onclick = "showForm('add-soft-skill-form')" class ="page-button">Add new Skill</button>
+            </div>
+        
+            <div id="resume">
+                
+                <h1> Resume </h1>
+                <hr>
+                {% for res in userResume %}
+                {% if res.resume %}
+                    <a href="{{ res.resume.url }}" download="{{ res.resume.name }}">
+                        <img src="{% static 'image/PDF-ICON3.png' %}" alt="PDF Icon" style="width: 100px;">
+                    </a>
+                {% else %}
+                {% endif %}
+                {% endfor %}
+
+                 <button id = "add-resume-button" onclick = "showForm('add-resume-form')">Upload Resume </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- HIDDEN FORMS -->
+
+    <div id = "add-education-form">
+        <h1>Education</h1>
+        <form method="POST" action="{% url 'addNewUserEducation' %}" id = "educationForm"> {% csrf_token %}
+            <div class = "form-item">
+                <label for = "school">School</label>
+                <input type = "text" id = "school" name = "eduSchool" >     
+            </div>
+            <div class="required-education-school">  
+    
+            </div>
+            <div class = "form-item">
+                <label for = "degree">Degree</label>
+                <input type = "text" id = "degree" name = "eduDegree" > 
+               
+            </div>
+            <div class="required-education-degree">
+    
+            </div>
+        
+            <div class = "form-item">
+                <label for = "start-year" >Start year</label>
+                <input type = "year" id = "start-year"  name = "eduStartYear"  min = "1940" max = "2024">
+                
+            </div>
+            <div class="required-education-start-year">
+            </div>
+        
+            <div class = "form-item">
+                <label for = "end-year"> End Year</label>
+                <input type="year" id = "end-year" name = "eduEndYear"  min = "1940" max = "2024">
+                
+            </div>
+    
+            <div class="required-education-end-year">
+    
+            </div>
+            <input class = "form-button" id ="education-form-submit" type = "submit" value="Add">
+            <button class = "exit-button" onclick="exitForm('add-education-form')" id = "exit-education-form">X</button>
+        </form>
+    </div>
+
+    <div id = "add-soft-skill-form">
+        
+        <h1>Soft Skills </h1>
+        <form method="POST" action="{% url 'addNewUserSkill' %}" id = "skillForm"> {% csrf_token %}
+            <div class = "form-item">
+                <label for = "skill-text">Add Skill</label>
+                <input type = "text" id = "skill-text" name = "newSkill" >
+            </div>
+            <div class="required-skill">
+    
+            </div>
+          
+            <input class = "form-button" id = "skill-form-submit" type ="submit" value = "Add">
+            <button class = "exit-button" onclick="exitForm('add-soft-skill-form')" id = "exit-skill-form">X</button>
+        </form>
+        
+    </div>
+
+
+    <div id = "add-resume-form">
+        <h1> Upload Resume </h1>
+        <form method="POST" action = "{% url 'addResume' %}" enctype="multipart/form-data" id = "resumeForm"> {% csrf_token %}
+            <div class="form-item">
+                <input type ="file" name = "uploadResume" id="uploaded-resume">   
+            </div>
+            <button class = "exit-button" onclick="exitForm('add-resume-form')">X</button>
+            <input type = "submit" onclick="exitForm('add-resume-form')" class = "form-button" >
+        </form>
+        
+    </div> 
+    
+    <div id = "add-work-form">
+        <h1> Work Experience </h1>
+        <form method="POST" id = "expForm" action="{% url 'addNewUserExperience' %}"> {% csrf_token %}
+            <div class = "form-item">
+                <label for = "job-title">Job Title</label>
+                <input type = "text" id = "job-title" name = "jobTitle" >   
+            </div>
+            <div class="required-job-title">   
+            </div>
+        
+            <div class = "form-item">
+                <label for = "company">Company</label>
+                <input type = "text" id = "company"  name = "jobCompany">   
+            </div>
+            <div class="required-company-name">  
+            </div>
+        
+            <div class = "form-item">
+                <label for = "start-date">Start Year </label>
+                <input type = "number" id = "start-date"  name = "jobStartDate" >
+                
+            </div>
+            <div class ="required-start-date">  
+            </div>
+        
+            <div class = "form-item">
+                <label for = "end-date"> End Year</label>
+                <input type="number" id = "end-date" name = "jobEndDate" >
+                
+            </div>
+            <div class="required-end-date">  
+            </div>
+            <button class = "form-button" id = "experience-from-submit" type="submit">Add </button>
+            <button class = "exit-button" onclick = " exitForm('add-work-form')" id = "exit-experience-form">X</button>
+        </form>
+    </div>
+    <div id="social-account-form">
+        <h1> Social Accounts form </h1>
+        <form method="POST" action="{% url 'updateSocialAccount' %}"> {% csrf_token %}
+            <div class ="form-item">
+                <label for = "facebook-url"> Facebook </label>
+                <input type="url" id  = "facebook-url" name = "facebook">
+            </div>
+            <div class ="form-item">
+                <label for = "linkiden-url"> Linkiden</label>
+                <input type="url" id  = "linkiden-url" name = "linkden">   
+            </div>
+            <div class ="form-item">
+                <label for = "twitter-url"> Twitter </label>
+                <input type="url" id  = "twitter-url" name = "twitter">   
+            </div>
+            <input id="sumbit-social-accounts" type="submit" value="Confirm" class = "form-button"> 
+            <button class = "exit-button" onclick="exitForm('social-account-form')">X</button>
+        </form>
+    </div>
+
+    <div id="general-info-form">
+        <h1> General Info Form </h1>
+        <form method="POST" action="{% url 'updateGeneralInfo' %}"> {% csrf_token %}
+            <!-- Must change aslo in user Table -->
+            <div class="form-item">
+                <label for = "userName"> Name </label>
+                <input type = "text"  id = "userName" name = "userName">
+            </div>
+            <!-- Must change aslo in user Table -->
+            <div class="form-item">
+                <label for = "phoneNumber"> Phone Number </label>
+                <input type = "text"  id = "phoneNumber" name = "userPhoneNumber">
+            </div>
+            <div class="form-item">
+                <label for = "gender"> gender </label>
+                <input type = "text"  id = "gender" name="userGender">
+            </div>
+            <div class="form-item">
+                <label for = "gmail"> Gmail </label>
+                <input type = "email"  id = "gmail" name = "userGmail">
+                <div id="required-gmail">
+    
+                </div>
+            </div>
+            <div class="form-item">
+                <label for = "currentJobTitle"> Current Job Title </label>
+                <input type = "text"  id = "currentJobTitle" name = "userCurrentJobTitle">
+            </div>
+            <div class="form-item">
+                <label for = "cityOfResidence"> City Of residence </label>
+                <input type = "text"  id = "cityOfResidence" name = "userCurrentCity">
+            </div>
+            <input id = "edit-general-info-button form-button" type="submit" value="Confirm" class = "form-button">
+            <button class = "exit-button" onclick="exitForm('general-info-form')" id = "exit-general-info-button">X</button>
+        </form>
+    </div>
+    
+    
+    <div id="about-form">
+        <h1> About </h1>
+        <form method="POST" action="{% url 'updateAboutInfo' %}" id = "aboutForm"> {% csrf_token %}
+            <textarea cols ="50" rows = "20" id = "about-user-text"name = "aboutInfo">
+            </textarea >
+            <input id = "update-about-button" type="submit" value="Update" class = "form-button">
+            <button class = "exit-button" onclick = "exitForm('about-form')">X</button>
+
+        </form>
+    </div>
+ 
+    <script src = "{% static 'js/userProfile2.js'%}">
+
+    </script>
+</body>
+</html>
+
+
